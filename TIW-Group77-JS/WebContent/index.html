@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" media="all" href="css/loginstyle.css"/>
+	<meta charset="ISO-8859-1">
+	<script src="utils.js" charset="utf-8" defer></script>
+	<script src="login.js" charset="utf-8" defer></script>
+	
+	<title>Login Page</title>
+</head>
+<body>
+	<h1>Welcome to the javaScript version of the Exam application - Group 77</h1>
+	<p>Login as a student or as a professor to access the exam page</p>
+	<form class ="loginform" action="#">
+		<input class="input" type="text" placeholder="student or professor ID" name="id" required> <br>
+		<input class="input" type="password" placeholder="password" name="pwd" required><br>
+		<input id="loginbutton" class="loginbutton" type="button" value="login">
+	</form>
+	<p id="errormessage" class="error"></p>
+</body>
+</html>

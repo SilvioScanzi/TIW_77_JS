@@ -1,0 +1,60 @@
+@charset "ISO-8859-1";
+
+h1{
+	text-align: center;
+	text-transform: uppercase;
+}
+
+body{
+	text-align: center;
+	background-image: url("background.jpg");
+	background-repeat: no-repeat;
+	background-color: white;
+}
+
+.error{
+	color: red;
+}
+
+
+.loginform{
+	border-radius: 10px;
+	margin: auto;
+  	width: 30%;
+  	height: 130px;
+  	border: 3px solid black;
+  	padding: 10px;
+  	position: relative;
+  	background-color: #dbd5db;
+}
+
+.input{
+	margin: auto;
+  	width: 90%;
+  	padding: 10px;
+  	text-align: center;
+}
+
+.loginbutton{
+	position: absolute;
+	top: 90%;
+ 	left: 50%;
+  	transform: translate(-50%, -90%);
+	border-radius: 8px;
+	background-color: #CC5803; 
+  	border: none;
+  	color: white;
+  	padding: 10px 30px;
+  	width: 30%;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	font-size: 16px;
+  	margin: auto;
+	transition-duration: 0.4s;
+	cursor: pointer;
+}
+
+.loginbutton:hover{
+	background-color: #944003;
+}

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home Page</title>
+<link rel="stylesheet" type="text/css" media="all" href="css/standardstyle.css" />
+<script src="utils.js" charset="utf-8" defer></script>
+<script src="professor.js" charset="utf-8" defer></script>
+<script src="sort.js" charset="utf-8" defer></script>
+</head>
+
+<body>
+	<div class="topbar">
+		<form id="logout" action="Logout" method="GET">
+			<input class="logout" type="submit" value="LOGOUT">
+		</form>
+
+		<form>
+			<input id="gotohome" type="submit" value="HOME">
+		</form>
+	</div>
+	
+	<div id="welcomeprofessor">
+		<h1>Professor's home page</h1>
+		Welcome back <span id="userdata"></span>
+		<p>Here are your courses</p>
+		<table>
+			<thead>
+				<tr>
+					<th>COURSE NAME</th>
+					<th>SESSION</th>
+				</tr>
+			</thead>
+			<tbody id="professorcoursesdata">
+			</tbody>
+		</table>
+	</div>
+	
+	<div id="registeredstudents">
+	<h1 id="nostudents" class="nograde">There isn't any student registered in this session</h1>
+	<div id="yesstudents">
+		<h1>Here are the students registered for the course <span id="coursename"></span>  in the date:  <span id="sessiondate"></span></h1>
+		<table>
+			<thead>
+				<tr>
+					<th><button id="sortID" class="sortable">STUDENT ID</button></th>
+					<th><button id="sortSurname" class="sortable">STUDENT SURNAME</button></th>
+					<th><button id="sortName" class="sortable">STUDENT NAME</button></th>
+					<th><button id="sortMail" class="sortable">STUDENT MAIL</button></th>
+					<th><button id="sortDegree" class="sortable">STUDENT DEGREE</button></th>
+					<th><button id="sortGrade" class="sortable">GRADE</button></th>
+					<th><button id="sortState" class="sortable">STATE</button></th>
+					<th><button id="multipleedit" class="fill">MULTIPLE EDIT</button></th>
+				</tr>
+			</thead>
+			<tbody id="registeredstudentstable">
+			</tbody>
+		</table>
+		<form id="publishform" action="#">
+			<input id="publishbutton" type=submit value="PUBLISH">
+			<input id="courseidpublish" type=hidden name="courseID">
+			<input id="sessiondatepublish" type=hidden name="session">		
+		</form>
+		<form id="verbalizeform" class="inline" action="#">
+			<input id="verbalizebutton" type=submit value="VERBALIZE">
+			<input id="courseidverbalize" type=hidden name="courseID">
+			<input id="sessiondateverbalize" type=hidden name="session">		
+		</form>
+		<form id="reportform" class="inline" action="#">
+			<input id="reportbutton" type=submit value="SHOW REPORT">
+			<select id="reportwindow" name="reportID"></select> 
+		</form>
+			<div id="modalform" class="modal">
+				<div id="noedit"></div>
+				<div id="yesedit" class="modalcontent">
+					<table>
+						<thead>
+							<tr>
+								<th> STUDENT ID </th>
+								<th> STUDENT NAME </th>
+								<th> STUDENT SURNAME </th>
+								<th> STUDENT GRADE </th>
+							</tr>
+						</thead>
+						<tbody id="modalformtable">
+						</tbody>
+					</table>
+					<form>
+						<input id="modalformsubmit" type="submit" value="ENTER GRADE">
+						<input id="cancel" type="submit" value="CANCEL"> 
+						<input id="modalformcourseid" type="hidden" name="courseID">
+						<input id="modalformsessiondate" type="hidden" name="session">
+						<input id="modalstudentgrades" type="hidden" name="studentgrades">
+					</form>
+				</div>
+			</div>
+	</div>
+	</div>
+	
+	<div id="editsession">
+		<table id="editsessiontable" class="sessiontable">
+			<tr>
+				<th>STUDENT</th>
+			</tr>
+			<tr>
+				<td>ID: <span id="studentid"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>Name: <span id="studentname"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>Surname: <span id="studentsurname"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>Email: <span id="studentemail"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>Degree: <span id="studentdegree"></span>
+				</td>
+			</tr>
+
+			<tr>
+				<th>COURSE</th>
+			</tr>
+			<tr>
+				<td>Name: <span id="coursenameedit"></span></td>
+			</tr>
+			
+			<tr>
+				<th>SESSION</th>
+			</tr>
+			<tr>
+				<td>Date: <span id="sessiondateedit"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>Grade: <span class="capital" id="currentgrade"></span>
+					<form action="#">
+						<select name="grade">
+								<option value="1">absent</option>
+								<option value="2">failing grade</option>
+								<option value="3">skip next session</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+								<option value="20">20</option>
+								<option value="21">21</option>
+								<option value="22">22</option>
+								<option value="23">23</option>
+								<option value="24">24</option>
+								<option value="25">25</option>
+								<option value="26">26</option>
+								<option value="27">27</option>
+								<option value="28">28</option>
+								<option value="29">29</option>
+								<option value="30">30</option>
+								<option value="31">30 with honors</option>
+							</select> 
+							<input id="inputcourseid" type="hidden" name="courseID">
+							<input id="inputstudentid" type="hidden" name="studentID">
+							<input id="inputsessionid" type="hidden" name="session">
+							<input id="inputsubmit" type="submit" value="Enter grade"> 
+					</form>
+				</td>
+			</tr>
+		</table>
+	</div>
+		
+	<div id="showreport">
+		<h1>Here is your report for the session <span id="reportsession"></span> for the course <span id="reportcourse"></span></h1>
+		<table id="showreporttable" class="sessiontable">
+		<tr>
+			<th>REPORT</th>
+			</tr>
+			<tr>
+				<td>ID: <span id="reportid"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>Date: <span id="reportdate"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>Time: <span id="reporttime"></span>
+				</td>
+			</tr>
+
+			<tr>
+				<th>COURSE</th>
+			</tr>
+			<tr>
+				<td>Name: <span id="reportcoursename"></span></td>
+			</tr>
+			
+			<tr>
+				<th>SESSION</th>
+			</tr>
+			<tr>
+				<td>Date: <span id="reportsessiondate"></span>
+				</td>
+			</tr>
+		</table>
+		
+		<h1>These are the students whose grade was verbalized</h1>
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Surname</th>
+					<th>ID</th>
+					<th>Grade</th>
+				</tr>
+			</thead>
+			<tbody id="verbalizedstudents">
+			</tbody>
+		</table>
+	</div>	
+	
+	<div id="errormessage" class="red"></div>
+</body>
+</html>

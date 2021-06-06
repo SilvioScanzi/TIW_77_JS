@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home Page</title>
+<link rel="stylesheet" type="text/css" media="all" href="css/standardstyle.css" />
+<script src="utils.js" charset="utf-8" defer></script>
+<script src="student.js" charset="utf-8" defer></script>
+</head>
+
+<body>
+	<div class="topbar">
+		<form id="logout" action="Logout" method="GET">
+			<input class="logout" type="submit" value="LOGOUT">
+		</form>
+
+		<form>
+			<input id="gotohome" type="submit" value="HOME">
+		</form>
+	</div>
+	
+	<div id="welcomestudent">
+		<h1>Student's home page</h1>
+		Welcome back <span id="userdata"></span>
+		<p>Here are the courses you are enrolled in</p>
+		<table>
+			<thead>
+				<tr>
+					<th>COURSE NAME</th>
+					<th>PROFESSOR</th>
+					<th>SESSION</th>
+				</tr>
+			</thead>
+			<tbody id="studentcoursesdata">
+			</tbody>
+		</table>
+	</div>
+	<div id="sessionresult">
+	
+	<h1 id="nograde" class="nograde">Grade is yet to be published</h1>
+	
+	<div id="yesgrade">
+		<h1>Here is your grade for the course</h1>
+		<table class="sessiontable">
+			<tr>
+				<th>STUDENT</th>
+			</tr>
+			<tr>
+				<td>ID: <span id="studentid"></span></td>
+			</tr>
+			<tr>
+				<td>Name: <span id="studentname"></span></td>
+			</tr>
+			<tr>
+				<td>Surname: <span id="studentsurname"></span></td>
+			</tr>
+			<tr>
+				<td>Degree: <span id="degree"></span></td>
+			</tr>
+
+			<tr>
+				<th>COURSE</th>
+			</tr>
+			<tr>
+				<td>Name: <span id="coursename"></span></td>
+			</tr>
+			<tr>
+				<td>Professor name: <span id="profname"></span></td>
+			</tr>
+			<tr>
+				<th>SESSION</th>
+			</tr>
+			<tr>
+				<td>Date: <span id="date"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>Grade: <span class="capital" id="grade"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>State: <span class="capital" id="state"></span>
+				</td>
+			</tr>
+		</table>
+		<form id="rejectform" class="sessionresult" action="#"></form>
+		</div>
+		<p class="red" id="rejectmessage"></p>
+	</div>
+	
+	<div id="errormessage" class="red"></div>
+</body>
+</html>
